@@ -48,6 +48,15 @@ app.get("/createfile", function (req, res) {
   );
 });
 
+//Alternate Solution
+//fs.writeFile(`./files/${timeStamp.toString()}.txt`, timeStamp.toString(), "utf-8", (err) => {   
+//  if(err) { 
+//    console.log("Error in creating file ", err);      
+//    response.send("Error occurred")  
+//  }else{
+//    response.send("file created successfully")  
+//  } 
+//})
 app.get("/readfile", function (req, res) {
   res.json(
     fs.readdir("./files", function (err, data) {
